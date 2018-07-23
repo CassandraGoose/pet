@@ -7,10 +7,10 @@ export default new Vuex.Store({
   state: {
     pet: {
       id: null,
-      hunger: 100,
-      thirst: 100,
-      poop: 0,
-      love: 100,
+      hunger: 90,
+      thirst: 90,
+      poop: 1,
+      love: 90,
     },
     user: {
       name: null,
@@ -24,7 +24,18 @@ export default new Vuex.Store({
     },
   },
   mutations: {
-
+    FEED_PET() {
+      this.state.pet.hunger = this.state.pet.hunger + 10;
+    },
+    WATER_PET() {
+      this.state.pet.thirst = this.state.pet.thirst + 10;
+    },
+    LOVE_PET() {
+      this.state.pet.love = this.state.pet.love + 10;
+    },
+    CLEAN_POOP() {
+      this.state.pet.poop = this.state.pet.poop - 1;
+    },
   },
   actions: {
 
