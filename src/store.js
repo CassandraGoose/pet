@@ -7,6 +7,7 @@ export default new Vuex.Store({
   state: {
     pet: {
       id: null,
+      name: '',
       hunger: 90,
       thirst: 90,
       poop: 1,
@@ -21,6 +22,17 @@ export default new Vuex.Store({
     addOns: {
       decor: {},
       clothes: {},
+    },
+  },
+  getters: {
+    getPetItems() {
+      const items = [];
+      items.push(this.state.pet.name);
+      items.push(this.state.pet.hunger);
+      items.push(this.state.pet.thirst);
+      items.push(this.state.pet.poop);
+      items.push(this.state.pet.love);
+      return items;
     },
   },
   mutations: {
